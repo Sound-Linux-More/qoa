@@ -1,15 +1,18 @@
 CC ?= gcc
 
 # QOACONV
-# Requires
-# - https://github.com/mackron/dr_libs/blob/master/dr_mp3.h
-# - https://github.com/mackron/dr_libs/blob/master/dr_flac.h
-# Remove -D QOACONV_HAS_DRMP3 and -D QOACONV_HAS_DRFLAC to compile qoaconv
-# without MP3/FLAC support
+
 TARGET_CONV ?= qoaconv
-CFLAGS_CONV ?= -std=c99 -O3 -D QOACONV_HAS_DRMP3 -D QOACONV_HAS_DRFLAC
+CFLAGS_CONV ?= -std=c99 -O3
 LFLAGS_CONV ?= -lm
 
+# Call `make HAS_DRLIBS=true` to compile with mp3/flac support
+# Requires header files from https://github.com/mackron/dr_libs
+# curl https://raw.githubusercontent.com/mackron/dr_libs/refs/heads/master/dr_mp3.h -o dr_mp3.h
+# curl https://raw.githubusercontent.com/mackron/dr_libs/refs/heads/master/dr_flac.h -o dr_flac.h
+ifeq ($(HAS_DRLIBS), true)
+	CFLAGS_CONV := $(CFLAGS_CONV) -D QOACONV_HAS_DRMP3 -D QOACONV_HAS_DRFLAC
+endif
 
 # QOAPLAY
 # Requires

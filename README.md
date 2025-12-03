@@ -15,6 +15,22 @@ Audio samples in WAV & QOA format can be found at: https://qoaformat.org/samples
 ⚠️ This implementation has not yet been fuzzed. Don't use it with untrusted input.
 
 
+## Compiling
+
+Call `make` to build `qoaconv` and `qoaplay`. By default `qoaconv` is compiled 
+without MP3 and FLAC support. 
+
+To compile `qoaconv` with MP3 and FLAC support, download the 
+[dr_*.h files](https://github.com/mackron/dr_libs) and pass `HAS_DRLIBS=true`
+to make:
+
+```bash
+curl https://raw.githubusercontent.com/mackron/dr_libs/refs/heads/master/dr_mp3.h -o dr_mp3.h
+curl https://raw.githubusercontent.com/mackron/dr_libs/refs/heads/master/dr_flac.h -o dr_flac.h
+make HAS_DRLIBS=true
+```
+
+
 ## Alternative Implementations of QOA
 
 - [pfusik/qoa-fu](https://github.com/pfusik/qoa-fu) - Fusion, transpiling to
