@@ -59,3 +59,4 @@ and [TypeScript](https://github.com/pfusik/qoa-fu/blob/master/transpiled/QOA.ts)
 - [SerenityOS](https://github.com/SerenityOS/serenity) supports QOA system wide through [QOALoader.h](https://github.com/SerenityOS/serenity/blob/master/Userland/Libraries/LibAudio/QOALoader.h)
 - [Qmmp](https://github.com/TTK-qmmp/qmmp-qoa) - supports decoding QOA samples
 - [Visual Studio Code](https://github.com/microsoft/vscode): supports playing QOA files with the [QOA Preview extension](https://github.com/braheezy/vscode-qoa-preview)
+- [OpenCubicPlayer](https://github.com/mywave82/opencubicplayer) - supports playing QOA files
